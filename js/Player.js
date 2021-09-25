@@ -66,16 +66,4 @@ class Player {
       allPlayers = data.val();
     });
   }
-
-  getCarsAtEnd() {
-    database.ref("carsAtEnd").on("value", data => {
-      this.rank = data.val();
-    });
-  }
-
-  static updateCarsAtEnd(rank) {
-    database.ref("/").update({
-      carsAtEnd: rank
-    });
-  }
 }
